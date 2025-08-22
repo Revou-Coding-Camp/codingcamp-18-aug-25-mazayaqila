@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- Main Content -->
+    <main>
+      <header>
+        <h1>To Do List</h1>
+        <p>Manage your tasks efficiently</p>
+      </header>
+      <section>
+        <div class="container">
+          <div id="task-form">
+            <h2>Add New Task</h2>
+            <form id="new-task-form">
+              <input
+                type="text"
+                id="task-input"
+                placeholder="Enter a new task"
+              />
+              <input type="date" id="due-date" />
+              <select id="category-select">
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="urgent">Urgent</option>
+              </select>
+              <button id="addtask" type="button" onclick="addTask()">
+                Add Task
+              </button>
+            </form>
+          </div>
+          <div id="filters">
+            <h2>Your Tasks</h2>
+            <div id="task-controls">
+              <select id="filter-category" onchange="applyFilters()">
+                <option value="all">All Categories</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="urgent">Urgent</option>
+              </select>
+              <select id="filter-status" onchange="applyFilters()">
+                <option value="all">All Statuses</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+              </select>
+              <div id="delete">
+                <button id="delbut" onclick="deleteAll()">Delete All</button>
+              </div>
+            </div>
+          </div>
+          <table id="task-output">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th>Category</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="task-list">
+              <!-- Tasks will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2022 Mazaya Aqila. All rights reserved.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="/js/script.js"></script>
+  </body>
+</html>
